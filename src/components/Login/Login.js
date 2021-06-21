@@ -4,6 +4,8 @@ import firebaseConfig from './firebase.config';
 import firebase from "firebase/app";
 import "firebase/auth";
 import { useHistory, useLocation } from 'react-router-dom';
+import login from '../../Images/login.gif';
+
 if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
 }
@@ -46,11 +48,18 @@ const Login = () => {
     }
 
     return (
-        <section>
-            <div style={{border:'1 px solid cyan'}} className="login text-center mt-5 p-5">
+        <section style={{height: '600px' , width: '100%'}} className="row d-flex align-items-center" >
+            <div className="row">
+                <div className="col-md-4 offset-md-1">
+                    <img style={{height:'300px'}}  src={login} alt="" />
+                </div>
+                <div className="col-md-6 ms-auto">
+                <div style={{border:'1 px solid cyan'}} className="login text-center mt-5 p-5">
                 <h1>Google SIgn</h1>
                 <br />
                 <button onClick={handleGoogleSignIn} className="btn btn-primary">Google Sign In</button>
+            </div>
+                </div>
             </div>
         </section>
     );
