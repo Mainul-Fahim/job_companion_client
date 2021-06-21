@@ -1,0 +1,9 @@
+.job-card{
+    transition: transform .2s;
+    background-color: #F5F5DC;
+
+}
+.job-card:hover{
+    box-shadow: rgb(1, 2, 2);
+    transform: scale(1.1); 
+}
