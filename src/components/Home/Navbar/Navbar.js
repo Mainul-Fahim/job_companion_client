@@ -29,11 +29,13 @@ const Navbar = () => {
                              <span>Dashboard</span>
                         </Link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link  me-5" href="#">For Employer</a>
+                        <li class="nav-item p-2 me-2">
+                        <Link className="text-dark me-4 text-decoration-none" to="/employer" >
+                             <span>For Employer</span>
+                        </Link>
                         </li>
                         <li class="nav-item">
-                            {loggedInUser.email?loggedInUser.name:<a class="nav-link  me-5 btn-primary text-white" href="/login">Login</a>}
+                            {loggedInUser.email?loggedInUser.name:<a class="nav-link  me-5 btn-primary text-white" href="/login">JobSeeker Login</a>}
                         </li>
                     </ul>
 
