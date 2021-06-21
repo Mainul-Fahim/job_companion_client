@@ -33,7 +33,11 @@ const AddJobs = () => {
         })
             .then(res => {
                 console.log(res);
-                alert('Successfully Added');
+                if(res)
+                    {
+                        alert("successfully added");
+                        
+                    }
             })
     };
 
@@ -42,7 +46,7 @@ const AddJobs = () => {
             <div style={containerStyle} className="container-fluid row">
 
                 <div className="col-md-10 mb-5 addservice">
-                    <h1 className="text-center">Add Service</h1>
+                    <h1 className="text-center">Add Jobs</h1>
                     <br />
                     <div>
                         <h4><Link to="/" className="text-black"> <span>Logout</span></Link></h4>
