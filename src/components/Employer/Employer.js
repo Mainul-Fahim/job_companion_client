@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 import ProcessPayment from '../Employer/ProcessPayment/ProcessPayment';
+import Sidebar from '../Dashboard/Sidebar/Sidebar';
 import './Employer.css';
 
 const containerStyle = {
@@ -14,7 +15,7 @@ const containerStyle = {
 const Employer = () => {
 
     const { register, handleSubmit, watch, errors } = useForm();
-    const [loggedInUser,setLoggedInUser]=useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [shippingData, setShippingData] = useState(null);
     const [orderDetails, setOrderDetails] = useState({});
     const [checkOutDate, setCheckOutDate] = useState({ orderDate: new Date() });
@@ -26,8 +27,8 @@ const Employer = () => {
     };
     const handlePaymentSuccess = paymentId => {
 
-        const email =loggedInUser.email;
-        const employerBook = { ...checkOutDate, paymentId, shippingData , email};
+        const email = loggedInUser.email;
+        const employerBook = { ...checkOutDate, paymentId, shippingData, email };
         fetch('http://localhost:5000/addEmployers', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -36,21 +37,24 @@ const Employer = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data)
-                    {
-                        alert("successfully Placed");
-                        history.push("/employerlogin");
-                        setLoggedInUser(data.email);
-                        //history.push("/addjobs");
-                    }
+                if (data) {
+                    alert("successfully Placed");
+                    history.push("/employerlogin");
+                    setLoggedInUser(data.email);
+                    //history.push("/addjobs");
+                }
             });
     }
     return (
         <section>
             <div style={containerStyle} className="container-fluid row">
+                <div className="col-md-2">
+                    <Sidebar></Sidebar>
+                </div>
                 <div>
                     <h1 className="text-center">Employer Account</h1>
                     <br />
+
                     <div style={{ border: '1px solid cyan', height: '500px' }} className="ms-5 pt-5 ps-5">
                         <div className="row">
                             <div style={{ display: shippingData ? 'none' : 'block' }} className="col-md-6">

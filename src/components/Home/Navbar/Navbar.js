@@ -35,7 +35,7 @@ const Navbar = () => {
                         </Link>
                         </li>
                         <li class="nav-item">
-                            {loggedInUser.email?loggedInUser.name:<a class="nav-link  me-5 btn-primary text-white" href="/login">JobSeeker Login</a>}
+                            {loggedInUser.email?loggedInUser.name:<a class="nav-link  me-5 btn-primary text-white" href="/login">Login</a>}
                         </li>
                     </ul>
 

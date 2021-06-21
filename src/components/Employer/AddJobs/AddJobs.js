@@ -45,7 +45,7 @@ const AddJobs = () => {
                     <h1 className="text-center">Add Service</h1>
                     <br />
                     <div>
-                        <h4><Link to="/" className="text-white"> <span>Logout</span></Link></h4>
+                        <h4><Link to="/" className="text-black"> <span>Logout</span></Link></h4>
                     </div>
                     <div style={{ border: '1px solid cyan', height: '500px' }} className="ms-5 pt-5 ps-5">
                         <form onSubmit={handleSubmit(onSubmit)}>

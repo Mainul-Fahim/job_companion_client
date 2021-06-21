@@ -14,6 +14,9 @@ import Login from './components/Login/Login';
 import Employer from './components/Employer/Employer';
 import AddJobs from './components/Employer/AddJobs/AddJobs';
 import EmployerLogin from './components/Employer/EmployerLogin/EmployerLogin';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MakeAdmin from './components/Dashboard/Admin/MakeAdmin/MakeAdmin';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
 export const UserContext = createContext();
 
@@ -40,12 +43,18 @@ function App() {
           <Route path="/employerlogin">
             <EmployerLogin></EmployerLogin>
           </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <Route path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </Route>
           <Route path="/employer">
             <Employer></Employer>
           </Route>
-          <Route path="/addjobs">
+          <PrivateRoute path="/addjobs">
              <AddJobs></AddJobs>
-          </Route>          
+          </PrivateRoute>          
            <Route path="*">
             <NotFound></NotFound>
           </Route>
