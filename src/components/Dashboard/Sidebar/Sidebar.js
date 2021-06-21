@@ -48,11 +48,7 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faGripHorizontal} /> <span>Make Admin</span>
                         </Link>
                     </li>
-                    <li>
-                        <Link to="/manageService" className="text-white">
-                            <FontAwesomeIcon icon={faGripHorizontal} /> <span>Manage Services</span>
-                        </Link>
-                    </li>
+                    
                 </div>
                  :<div>
                     {isEmployer && <li>
@@ -60,6 +56,7 @@ const Sidebar = () => {
                             <FontAwesomeIcon icon={faCalendar} /> <span>Add Jobs</span>
                         </Link>
                     </li>
+                    
                     }
                     
                 </div>

@@ -48,9 +48,7 @@ const Employer = () => {
     return (
         <section>
             <div style={containerStyle} className="container-fluid row">
-                <div className="col-md-2">
-                    <Sidebar></Sidebar>
-                </div>
+               
                 <div>
                     <h1 className="text-center">Employer Account</h1>
                     <br />

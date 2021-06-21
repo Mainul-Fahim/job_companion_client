@@ -17,6 +17,8 @@ import EmployerLogin from './components/Employer/EmployerLogin/EmployerLogin';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MakeAdmin from './components/Dashboard/Admin/MakeAdmin/MakeAdmin';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import ServiceList from './components/Dashboard/Admin/ServiceList/ServiceList';
+
 
 export const UserContext = createContext();
 
@@ -54,7 +56,10 @@ function App() {
           </Route>
           <PrivateRoute path="/addjobs">
              <AddJobs></AddJobs>
-          </PrivateRoute>          
+          </PrivateRoute>  
+          <Route path="/serviceList">
+            <ServiceList></ServiceList>
+          </Route>        
            <Route path="*">
             <NotFound></NotFound>
           </Route>
