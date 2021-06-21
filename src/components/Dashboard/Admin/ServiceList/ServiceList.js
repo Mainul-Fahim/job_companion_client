@@ -12,7 +12,7 @@ const ServiceList = () => {
     const [orderStatus, setOrderStatus]=useState('Pending');
 
     useEffect(() => {
-        fetch('http://localhost:5000/allJobs')
+        fetch('https://calm-bastion-47822.herokuapp.com/allJobs')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -23,7 +23,7 @@ const ServiceList = () => {
         console.log('clicked',id);
         const status=document.getElementById("status").value;
         console.log(status);
-        fetch(`http://localhost:5000/update/${id}`, {
+        fetch(`https://calm-bastion-47822.herokuapp.com/update/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(status)

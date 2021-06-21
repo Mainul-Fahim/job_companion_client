@@ -29,7 +29,7 @@ const Employer = () => {
 
         const email = loggedInUser.email;
         const employerBook = { ...checkOutDate, paymentId, shippingData, email };
-        fetch('http://localhost:5000/addEmployers', {
+        fetch('https://calm-bastion-47822.herokuapp.com/addEmployers', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(employerBook)

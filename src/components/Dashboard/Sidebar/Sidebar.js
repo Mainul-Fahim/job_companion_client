@@ -12,7 +12,7 @@ const Sidebar = () => {
     const [isEmployer, setIsEmployer] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin', {
+        fetch('https://calm-bastion-47822.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -23,7 +23,7 @@ const Sidebar = () => {
             .then(data => setIsAdmin(data));
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/isEmployer', {
+        fetch('https://calm-bastion-47822.herokuapp.com/isEmployer', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

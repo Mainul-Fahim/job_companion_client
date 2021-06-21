@@ -12,12 +12,12 @@ const Jobs = () => {
     const { register, handleSubmit, watch, errors } = useForm();
 
     useEffect(() => {
-        fetch('http://localhost:5000/jobs')
+        fetch('https://calm-bastion-47822.herokuapp.com/jobs')
             .then(res => res.json())
             .then(data => setJobs(data));
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/isEmployer', {
+        fetch('https://calm-bastion-47822.herokuapp.com/isEmployer', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,18 +47,19 @@ const Jobs = () => {
                 </form>
             </div>
                 <div className="d-flex justify-content-center">
-                     <div style={{ display: search ? 'block' : 'none' }} className="w-75 row mt-5 pt-5">
+                    <div style={{ display: search ? 'block' : 'none' }} className="w-75 row mt-5 pt-5">
                         {
 
                             jobs.filter(job => job.jobTitle === search)
                                 .map(job => <JobDetail job={job}></JobDetail>)
                         }
-                    </div> 
-                    <div style={{ display: search ? 'none' : 'block' }} className="w-75 row mt-5 pt-5">
-                        {
-                            jobs.map(job => <JobDetail job={job}></JobDetail>)
-                        }
                     </div>
+
+                </div>
+                <div style={{ display: search ? 'none' : 'block' }} className="w-75 row mt-5 pt-5">
+                    {
+                        jobs.map(job => <JobDetail job={job}></JobDetail>)
+                    }
                 </div>
             </div>}
         </section>

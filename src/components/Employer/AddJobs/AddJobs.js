@@ -23,7 +23,7 @@ const AddJobs = () => {
             location: data.location,
             jobType: data.jobType,
         };
-        const url = `http://localhost:5000/addJobs`;
+        const url = `https://calm-bastion-47822.herokuapp.com/addJobs`;
         fetch(url, {
             method: 'POST',
             headers: {

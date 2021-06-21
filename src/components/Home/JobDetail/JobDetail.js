@@ -8,7 +8,7 @@ const JobDetail = ({job}) => {
    }
     return (
         <div className="col-md-4 text-center mb-3">
-           <div className="job-card" class="card" styles="width: 18rem;">
+           <div class="job-card card" styles="width: 18rem;">
             <h4 className="p-2">{job.jobTitle}</h4>
             <div class="card-body">
                 <h5 class="card-title">{job.jobPosition}</h5>
