@@ -16,6 +16,8 @@ In the project,
 - Employer cannot see jobs in homepage.
 - Only Job seeking or normal user having account can see jobs.
 - Can filter jobs by Job Title.
+## Live site
 
+- https://job-companion-3f945.web.app/
 
 
